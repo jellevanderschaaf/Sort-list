@@ -1,5 +1,4 @@
 var nameList = [];
-var undefined = "";
 
 console.log(nameList);
 
@@ -15,8 +14,9 @@ document.getElementById('list').addEventListener('click', list);
 
 function sortList() {
     var sortedOutput = nameList.sort();
-    document.getElementById('sortedList').innerHTML = sortedOutput[0] + "<br>" + sortedOutput[1] + "<br>" + sortedOutput[2] + "<br>" + sortedOutput[3];
-
+    sortedOutput.forEach(function(element) {
+        document.getElementById('sortedList').innerHTML += element + "<br>";
+    })
 }
 
 document.getElementById('sort').addEventListener('click', sortList);
